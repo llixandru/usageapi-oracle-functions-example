@@ -21,7 +21,7 @@ Necessary steps before deployment:
 
 - Create Dynamic Group for Oracle Functions
 
-``ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..aaaaaaaawjeriye4hdpx5la3sz7rpvafezrrgdx2w6p6kumfpw44vppqwnjq'}``
+``ALL {resource.type = 'fnfunc', resource.compartment.id = '<COMPARTMENT_OCID>'}``
 
 - Allow API GW access to Oracle Functions
 
