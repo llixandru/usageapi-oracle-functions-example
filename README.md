@@ -42,7 +42,7 @@ The response is returned in JSON format.
 	Allow dynamicgroup <DYN_GRP_NAME> to manage all-resources in tenancy
 	```
 
-2. Create a VCN and a subnet, and add port 433 to the security list in the Ingress Rules.
+2. Create a VCN and a subnet, and add port 443 (HTTPS) to the security list in the Ingress Rules.
 
 3. Obtain an Auth Token for your user, in order to be able to deploy the Oracle Functions function to OCI.
 
