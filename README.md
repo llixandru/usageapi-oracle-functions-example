@@ -492,3 +492,4 @@ curl --location --request POST 'https://1234xxxx.apigateway.<region>.oci.custome
 
 
 > Written with [StackEdit](https://stackedit.io/) by Liana Lixandru.
+> Guide for setting up Oauth2 with IDCS for API Gateway available here: https://mytechretreat.com/complete-guide-how-to-configure-oauth-2-0-with-jwt-idcs-on-oci-api-gateway/
