@@ -42,7 +42,9 @@ The response is returned in JSON format.
 	Allow dynamicgroup <DYN_GRP_NAME> to manage all-resources in tenancy
 	```
 
-- Obtain an Auth Token for your user, in order to be able to deploy the Oracle Functions function to OCI.
+2. Create a VCN and a subnet, and add port 433 to the security list in the Ingress Rules.
+
+3. Obtain an Auth Token for your user, in order to be able to deploy the Oracle Functions function to OCI.
 
 > NOTE: Before you can push and pull Docker images to and from  Oracle Cloud Infrastructure Registry  (also known as Container Registry), you must already have an auth token.
 
