@@ -36,7 +36,8 @@ def get_usage(body):
             time_usage_ended=datetime.strptime(
                 body["timeUsageEnded"],
                 "%Y-%m-%dT%H:%M:%S.%fZ"),
-            granularity=body["granularity"]))
+            granularity=body["granularity"],
+            query_type=body["queryType"]))
         output = request_summarized_usages_response.data
     except Exception as e:
         output = "Failed: " + str(e.message)
