@@ -15,7 +15,10 @@ def handler(ctx, data: io.BytesIO = None):
         body = json.loads(data.getvalue())
     except Exception:
         raise Exception()
-    resp = get_usage(body)
+    if "queryType" in body:
+        resp = get_usage(body, body["queryType"])
+    else:
+        resp = get_usage(body)
     return response.Response(
         ctx,
         response_data=resp,
@@ -23,7 +26,7 @@ def handler(ctx, data: io.BytesIO = None):
     )
 
 
-def get_usage(body):
+def get_usage(body, queryType="COST"):
     signer = oci.auth.signers.get_resource_principals_signer()
     usage_api_client = oci.usage_api.UsageapiClient(config={}, signer=signer)
     output = ""
@@ -37,7 +40,7 @@ def get_usage(body):
                 body["timeUsageEnded"],
                 "%Y-%m-%dT%H:%M:%S.%fZ"),
             granularity=body["granularity"],
-            query_type=body["queryType"]))
+            query_type=queryType))
         output = request_summarized_usages_response.data
     except Exception as e:
         output = "Failed: " + str(e.message)
